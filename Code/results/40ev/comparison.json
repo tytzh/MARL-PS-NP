@@ -1,0 +1,291 @@
+{
+  "episodes": 200,
+  "train_evs": 40,
+  "test_evs": 40,
+  "train_seeds": [
+    1,
+    2,
+    3
+  ],
+  "test_seeds": [
+    60,
+    61
+  ],
+  "methods": {
+    "proposed": {
+      "label": "proposed",
+      "storage_name": "proposed",
+      "trainer": "ddpg",
+      "group": 3,
+      "knn": 5,
+      "prune": 10,
+      "state_assembly": "preference",
+      "battery_action_regularization": 0.2,
+      "capacitor_td3": false,
+      "transformer_credit": "proportional",
+      "capacitor_noise_clip": 0.02,
+      "infrastructure_scenario": "hybrid",
+      "infrastructure_assignment": "exclusive",
+      "capacitor_gradient_steps": 2,
+      "capacitor_td3_actor_lr": 0.0001,
+      "capacitor_td3_critic_lr": 0.0001,
+      "battery_actor_lr": 0.0002,
+      "battery_critic_lr": 0.0002,
+      "battery_gradient_steps": 1
+    },
+    "w/o N": {
+      "label": "w/o N",
+      "storage_name": "w_o_N",
+      "trainer": "ddpg",
+      "group": 1,
+      "knn": 5,
+      "prune": 0,
+      "state_assembly": "preference",
+      "no_mask_specialization": true,
+      "battery_action_regularization": 0.2,
+      "capacitor_td3": false,
+      "transformer_credit": "proportional",
+      "capacitor_noise_clip": 0.02,
+      "infrastructure_scenario": "hybrid",
+      "infrastructure_assignment": "exclusive",
+      "capacitor_gradient_steps": 2,
+      "capacitor_td3_actor_lr": 0.0001,
+      "capacitor_td3_critic_lr": 0.0001,
+      "battery_actor_lr": 0.0002,
+      "battery_critic_lr": 0.0002,
+      "battery_gradient_steps": 1
+    },
+    "w/o N+F (C)": {
+      "label": "w/o N+F (C)",
+      "storage_name": "w_o_N+F_C",
+      "trainer": "ddpg",
+      "group": 1,
+      "knn": 40,
+      "prune": 0,
+      "state_assembly": "fixed_global",
+      "no_mask_specialization": true,
+      "battery_action_regularization": 0.2,
+      "capacitor_td3": false,
+      "transformer_credit": "proportional",
+      "capacitor_noise_clip": 0.02,
+      "infrastructure_scenario": "hybrid",
+      "infrastructure_assignment": "exclusive",
+      "capacitor_gradient_steps": 2,
+      "capacitor_td3_actor_lr": 0.0001,
+      "capacitor_td3_critic_lr": 0.0001,
+      "battery_actor_lr": 0.0002,
+      "battery_critic_lr": 0.0002,
+      "battery_gradient_steps": 1
+    },
+    "w/o N+F (D)": {
+      "label": "w/o N+F (D)",
+      "storage_name": "w_o_N+F_D",
+      "trainer": "ddpg",
+      "group": 1,
+      "knn": 1,
+      "prune": 0,
+      "state_assembly": "preference",
+      "no_mask_specialization": true,
+      "battery_action_regularization": 0.2,
+      "capacitor_td3": false,
+      "transformer_credit": "proportional",
+      "capacitor_noise_clip": 0.02,
+      "infrastructure_scenario": "hybrid",
+      "infrastructure_assignment": "exclusive",
+      "capacitor_gradient_steps": 2,
+      "capacitor_td3_actor_lr": 0.0001,
+      "capacitor_td3_critic_lr": 0.0001,
+      "battery_actor_lr": 0.0002,
+      "battery_critic_lr": 0.0002,
+      "battery_gradient_steps": 1
+    }
+  },
+  "results": {
+    "proposed": {
+      "label": "proposed",
+      "profitu": {
+        "mean": 35.59745976463778,
+        "sd": 2.7104750110137865
+      },
+      "costb": {
+        "mean": 3.351823508335405,
+        "sd": 0.07969222964214255
+      },
+      "psoc": {
+        "mean": 98.14814814814814,
+        "sd": 0.0
+      },
+      "dsoc": {
+        "mean": 5.017411907513935,
+        "sd": 0.003906798854679251
+      },
+      "transformer_violation_frequency": {
+        "mean": 26.38888888888889,
+        "sd": 1.2028130608117218
+      }
+    },
+    "w/o N": {
+      "label": "w/o N",
+      "profitu": {
+        "mean": 39.758933225433,
+        "sd": 7.246820201470785
+      },
+      "costb": {
+        "mean": 3.530962841959237,
+        "sd": 0.02759711844549715
+      },
+      "psoc": {
+        "mean": 96.2962962962963,
+        "sd": 0.0
+      },
+      "dsoc": {
+        "mean": 3.333418104383681,
+        "sd": 0.2686730282491326
+      },
+      "transformer_violation_frequency": {
+        "mean": 27.083333333333332,
+        "sd": 4.351167857633658e-15
+      }
+    },
+    "w/o N+F (C)": {
+      "label": "w/o N+F (C)",
+      "profitu": {
+        "mean": 31.407838135375098,
+        "sd": 0.0010119588205768485
+      },
+      "costb": {
+        "mean": 3.3927334056169407,
+        "sd": 0.031017144262865514
+      },
+      "psoc": {
+        "mean": 85.55555555555554,
+        "sd": 1.1547005383792515
+      },
+      "dsoc": {
+        "mean": 9.476698172339065,
+        "sd": 0.8764575771529735
+      },
+      "transformer_violation_frequency": {
+        "mean": 28.472222222222218,
+        "sd": 1.2028130608117198
+      }
+    },
+    "w/o N+F (D)": {
+      "label": "w/o N+F (D)",
+      "profitu": {
+        "mean": 34.932077469032436,
+        "sd": 6.13152348723863
+      },
+      "costb": {
+        "mean": 3.5498117354820535,
+        "sd": 0.06694125482043274
+      },
+      "psoc": {
+        "mean": 96.2962962962963,
+        "sd": 0.0
+      },
+      "dsoc": {
+        "mean": 3.201589998271731,
+        "sd": 0.16609574269119526
+      },
+      "transformer_violation_frequency": {
+        "mean": 27.083333333333332,
+        "sd": 4.351167857633658e-15
+      }
+    }
+  },
+  "per_seed": {
+    "proposed": {
+      "1": {
+        "profitu": 34.45115123989119,
+        "costb": 3.3341429350290337,
+        "psoc": 98.14814814814814,
+        "dsoc": 5.019158621629077,
+        "transformer_violation_frequency": 27.083333333333336
+      },
+      "2": {
+        "profitu": 38.69274752068268,
+        "costb": 3.282456381906425,
+        "psoc": 98.14814814814814,
+        "dsoc": 5.020140608151752,
+        "transformer_violation_frequency": 25.0
+      },
+      "3": {
+        "profitu": 33.64848053333946,
+        "costb": 3.4388712080707564,
+        "psoc": 98.14814814814814,
+        "dsoc": 5.012936492760978,
+        "transformer_violation_frequency": 27.083333333333336
+      }
+    },
+    "w/o N": {
+      "1": {
+        "profitu": 43.89463996673582,
+        "costb": 3.510736499092477,
+        "psoc": 96.2962962962963,
+        "dsoc": 3.6259499937295923,
+        "transformer_violation_frequency": 27.083333333333336
+      },
+      "2": {
+        "profitu": 43.99094892841335,
+        "costb": 3.519750623896244,
+        "psoc": 96.2962962962963,
+        "dsoc": 3.2766173283259077,
+        "transformer_violation_frequency": 27.083333333333336
+      },
+      "3": {
+        "profitu": 31.39121078114983,
+        "costb": 3.5624014028889897,
+        "psoc": 96.2962962962963,
+        "dsoc": 3.097686991095544,
+        "transformer_violation_frequency": 27.083333333333336
+      }
+    },
+    "w/o N+F (C)": {
+      "1": {
+        "profitu": 31.408779338261205,
+        "costb": 3.3698238450081064,
+        "psoc": 84.88888888888889,
+        "dsoc": 10.179793760697876,
+        "transformer_violation_frequency": 27.083333333333332
+      },
+      "2": {
+        "profitu": 31.406767814414327,
+        "costb": 3.428029898585427,
+        "psoc": 86.88888888888889,
+        "dsoc": 8.49473755328088,
+        "transformer_violation_frequency": 29.166666666666664
+      },
+      "3": {
+        "profitu": 31.40796725344976,
+        "costb": 3.3803464732572897,
+        "psoc": 84.88888888888889,
+        "dsoc": 9.75556320303844,
+        "transformer_violation_frequency": 29.166666666666664
+      }
+    },
+    "w/o N+F (D)": {
+      "1": {
+        "profitu": 31.387909245742975,
+        "costb": 3.4920173789075566,
+        "psoc": 96.2962962962963,
+        "dsoc": 3.392031167944272,
+        "transformer_violation_frequency": 27.083333333333336
+      },
+      "2": {
+        "profitu": 42.012149332954664,
+        "costb": 3.6231610324819012,
+        "psoc": 96.2962962962963,
+        "dsoc": 3.086699222524962,
+        "transformer_violation_frequency": 27.083333333333336
+      },
+      "3": {
+        "profitu": 31.396173828399675,
+        "costb": 3.5342567950567014,
+        "psoc": 96.2962962962963,
+        "dsoc": 3.1260396043459577,
+        "transformer_violation_frequency": 27.083333333333336
+      }
+    }
+  }
+}

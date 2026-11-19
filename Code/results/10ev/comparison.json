@@ -1,0 +1,291 @@
+{
+  "episodes": 200,
+  "train_evs": 10,
+  "test_evs": 10,
+  "train_seeds": [
+    1,
+    2,
+    3
+  ],
+  "test_seeds": [
+    60,
+    61
+  ],
+  "methods": {
+    "proposed": {
+      "label": "proposed",
+      "storage_name": "proposed",
+      "trainer": "ddpg",
+      "group": 3,
+      "knn": 5,
+      "prune": 10,
+      "state_assembly": "preference",
+      "battery_action_regularization": 0.2,
+      "capacitor_td3": false,
+      "transformer_credit": "proportional",
+      "capacitor_noise_clip": 0.02,
+      "infrastructure_scenario": "hybrid",
+      "infrastructure_assignment": "exclusive",
+      "capacitor_gradient_steps": 2,
+      "capacitor_td3_actor_lr": 0.0001,
+      "capacitor_td3_critic_lr": 0.0001,
+      "battery_actor_lr": 0.0002,
+      "battery_critic_lr": 0.0002,
+      "battery_gradient_steps": 1
+    },
+    "w/o N": {
+      "label": "w/o N",
+      "storage_name": "w_o_N",
+      "trainer": "ddpg",
+      "group": 1,
+      "knn": 5,
+      "prune": 0,
+      "state_assembly": "preference",
+      "no_mask_specialization": true,
+      "battery_action_regularization": 0.2,
+      "capacitor_td3": false,
+      "transformer_credit": "proportional",
+      "capacitor_noise_clip": 0.02,
+      "infrastructure_scenario": "hybrid",
+      "infrastructure_assignment": "exclusive",
+      "capacitor_gradient_steps": 2,
+      "capacitor_td3_actor_lr": 0.0001,
+      "capacitor_td3_critic_lr": 0.0001,
+      "battery_actor_lr": 0.0002,
+      "battery_critic_lr": 0.0002,
+      "battery_gradient_steps": 1
+    },
+    "w/o N+F (C)": {
+      "label": "w/o N+F (C)",
+      "storage_name": "w_o_N+F_C",
+      "trainer": "ddpg",
+      "group": 1,
+      "knn": 10,
+      "prune": 0,
+      "state_assembly": "fixed_global",
+      "no_mask_specialization": true,
+      "battery_action_regularization": 0.2,
+      "capacitor_td3": false,
+      "transformer_credit": "proportional",
+      "capacitor_noise_clip": 0.02,
+      "infrastructure_scenario": "hybrid",
+      "infrastructure_assignment": "exclusive",
+      "capacitor_gradient_steps": 2,
+      "capacitor_td3_actor_lr": 0.0001,
+      "capacitor_td3_critic_lr": 0.0001,
+      "battery_actor_lr": 0.0002,
+      "battery_critic_lr": 0.0002,
+      "battery_gradient_steps": 1
+    },
+    "w/o N+F (D)": {
+      "label": "w/o N+F (D)",
+      "storage_name": "w_o_N+F_D",
+      "trainer": "ddpg",
+      "group": 1,
+      "knn": 1,
+      "prune": 0,
+      "state_assembly": "preference",
+      "no_mask_specialization": true,
+      "battery_action_regularization": 0.2,
+      "capacitor_td3": false,
+      "transformer_credit": "proportional",
+      "capacitor_noise_clip": 0.02,
+      "infrastructure_scenario": "hybrid",
+      "infrastructure_assignment": "exclusive",
+      "capacitor_gradient_steps": 2,
+      "capacitor_td3_actor_lr": 0.0001,
+      "capacitor_td3_critic_lr": 0.0001,
+      "battery_actor_lr": 0.0002,
+      "battery_critic_lr": 0.0002,
+      "battery_gradient_steps": 1
+    }
+  },
+  "results": {
+    "proposed": {
+      "label": "proposed",
+      "profitu": {
+        "mean": 42.744278740411666,
+        "sd": 10.800730218575941
+      },
+      "costb": {
+        "mean": 3.148673752683276,
+        "sd": 0.07247897697395458
+      },
+      "psoc": {
+        "mean": 100.0,
+        "sd": 0.0
+      },
+      "dsoc": {
+        "mean": 0.0,
+        "sd": 0.0
+      },
+      "transformer_violation_frequency": {
+        "mean": 20.833333333333336,
+        "sd": 0.0
+      }
+    },
+    "w/o N": {
+      "label": "w/o N",
+      "profitu": {
+        "mean": 36.61651638228086,
+        "sd": 0.04413140781628806
+      },
+      "costb": {
+        "mean": 3.3741112737965318,
+        "sd": 0.11475426317327592
+      },
+      "psoc": {
+        "mean": 100.0,
+        "sd": 0.0
+      },
+      "dsoc": {
+        "mean": 0.0,
+        "sd": 0.0
+      },
+      "transformer_violation_frequency": {
+        "mean": 20.833333333333336,
+        "sd": 0.0
+      }
+    },
+    "w/o N+F (C)": {
+      "label": "w/o N+F (C)",
+      "profitu": {
+        "mean": 36.68081441102431,
+        "sd": 0.016962559510207014
+      },
+      "costb": {
+        "mean": 3.2723432938083477,
+        "sd": 0.17964607968924215
+      },
+      "psoc": {
+        "mean": 88.8888888888889,
+        "sd": 4.811252243246887
+      },
+      "dsoc": {
+        "mean": 2.6038362391086096,
+        "sd": 1.2961829004150163
+      },
+      "transformer_violation_frequency": {
+        "mean": 20.833333333333336,
+        "sd": 0.0
+      }
+    },
+    "w/o N+F (D)": {
+      "label": "w/o N+F (D)",
+      "profitu": {
+        "mean": 36.6220580782132,
+        "sd": 0.025477890963594457
+      },
+      "costb": {
+        "mean": 3.208506472428492,
+        "sd": 0.14124190690084412
+      },
+      "psoc": {
+        "mean": 100.0,
+        "sd": 0.0
+      },
+      "dsoc": {
+        "mean": 0.0,
+        "sd": 0.0
+      },
+      "transformer_violation_frequency": {
+        "mean": 20.833333333333336,
+        "sd": 0.0
+      }
+    }
+  },
+  "per_seed": {
+    "proposed": {
+      "1": {
+        "profitu": 30.27605466620258,
+        "costb": 3.2320756016330177,
+        "psoc": 100.0,
+        "dsoc": 0.0,
+        "transformer_violation_frequency": 20.833333333333336
+      },
+      "2": {
+        "profitu": 48.72676688965158,
+        "costb": 3.1009478139333693,
+        "psoc": 100.0,
+        "dsoc": 0.0,
+        "transformer_violation_frequency": 20.833333333333336
+      },
+      "3": {
+        "profitu": 49.23001466538086,
+        "costb": 3.112997842483441,
+        "psoc": 100.0,
+        "dsoc": 0.0,
+        "transformer_violation_frequency": 20.833333333333336
+      }
+    },
+    "w/o N": {
+      "1": {
+        "profitu": 36.592695095172864,
+        "costb": 3.450556946562447,
+        "psoc": 100.0,
+        "dsoc": 0.0,
+        "transformer_violation_frequency": 20.833333333333336
+      },
+      "2": {
+        "profitu": 36.66743972717988,
+        "costb": 3.4296198902614123,
+        "psoc": 100.0,
+        "dsoc": 0.0,
+        "transformer_violation_frequency": 20.833333333333336
+      },
+      "3": {
+        "profitu": 36.58941432448982,
+        "costb": 3.2421569845657365,
+        "psoc": 100.0,
+        "dsoc": 0.0,
+        "transformer_violation_frequency": 20.833333333333336
+      }
+    },
+    "w/o N+F (C)": {
+      "1": {
+        "profitu": 36.66232929956639,
+        "costb": 3.399088858965013,
+        "psoc": 91.66666666666667,
+        "dsoc": 1.2276544732352124,
+        "transformer_violation_frequency": 20.833333333333336
+      },
+      "2": {
+        "profitu": 36.695665345835366,
+        "costb": 3.351182976339624,
+        "psoc": 91.66666666666667,
+        "dsoc": 3.8015180577834427,
+        "transformer_violation_frequency": 20.833333333333336
+      },
+      "3": {
+        "profitu": 36.68444858767117,
+        "costb": 3.0667580461204063,
+        "psoc": 83.33333333333333,
+        "dsoc": 2.7823361863071745,
+        "transformer_violation_frequency": 20.833333333333336
+      }
+    },
+    "w/o N+F (D)": {
+      "1": {
+        "profitu": 36.646921802290045,
+        "costb": 3.179701097974429,
+        "psoc": 100.0,
+        "dsoc": 0.0,
+        "transformer_violation_frequency": 20.833333333333336
+      },
+      "2": {
+        "profitu": 36.62324492928306,
+        "costb": 3.0838877078327642,
+        "psoc": 100.0,
+        "dsoc": 0.0,
+        "transformer_violation_frequency": 20.833333333333336
+      },
+      "3": {
+        "profitu": 36.596007503066495,
+        "costb": 3.361930611478282,
+        "psoc": 100.0,
+        "dsoc": 0.0,
+        "transformer_violation_frequency": 20.833333333333336
+      }
+    }
+  }
+}

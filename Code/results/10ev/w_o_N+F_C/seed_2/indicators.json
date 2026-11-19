@@ -1,0 +1,40 @@
+{
+  "test_runs": 2,
+  "table_summary": {
+    "profitu": {
+      "mean": 36.695665345835366,
+      "std": 6.114516499000136,
+      "n_valid": 2,
+      "n_total": 2,
+      "unit": "10^-2 $"
+    },
+    "costb": {
+      "mean": 3.351182976339624,
+      "std": 1.627490083490167,
+      "n_valid": 2,
+      "n_total": 2,
+      "unit": "$"
+    },
+    "psoc": {
+      "mean": 91.66666666666667,
+      "std": 11.785113019775789,
+      "n_valid": 2,
+      "n_total": 2,
+      "unit": "%"
+    },
+    "dsoc": {
+      "mean": 3.8015180577834427,
+      "std": 5.376158394923572,
+      "n_valid": 2,
+      "n_total": 2,
+      "unit": "%"
+    },
+    "transformer_violation_frequency": {
+      "mean": 20.833333333333336,
+      "std": 0.0,
+      "n_valid": 2,
+      "n_total": 2,
+      "unit": "% hourly intervals"
+    }
+  }
+}
