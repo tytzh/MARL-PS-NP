@@ -1,0 +1,40 @@
+{
+  "test_runs": 2,
+  "table_summary": {
+    "profitu": {
+      "mean": 31.406767814414327,
+      "std": 2.1354489364566525,
+      "n_valid": 2,
+      "n_total": 2,
+      "unit": "10^-2 $"
+    },
+    "costb": {
+      "mean": 3.428029898585427,
+      "std": 0.28500184003551976,
+      "n_valid": 2,
+      "n_total": 2,
+      "unit": "$"
+    },
+    "psoc": {
+      "mean": 86.88888888888889,
+      "std": 12.88505690162153,
+      "n_valid": 2,
+      "n_total": 2,
+      "unit": "%"
+    },
+    "dsoc": {
+      "mean": 8.49473755328088,
+      "std": 7.37522559499779,
+      "n_valid": 2,
+      "n_total": 2,
+      "unit": "%"
+    },
+    "transformer_overload_to_ev_allowance_percent": {
+      "mean": 5.434760138963025,
+      "std": 0.3627679253741502,
+      "n_valid": 2,
+      "n_total": 2,
+      "unit": "% of EV-allowable capacity"
+    }
+  }
+}
